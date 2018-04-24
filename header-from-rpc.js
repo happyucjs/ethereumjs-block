@@ -1,12 +1,12 @@
 'use strict'
 const BlockHeader = require('./header')
-const ethUtil = require('ethereumjs-util')
+const hucUtil = require('happyucjs-util')
 
 module.exports = blockHeaderFromRpc
 
 /**
- * Creates a new block header object from Ethereum JSON RPC.
- * @param {Object} blockParams - Ethereum JSON RPC of block (eth_getBlockByNumber)
+ * Creates a new block header object from HappyUC JSON RPC.
+ * @param {Object} blockParams - HappyUC JSON RPC of block (huc_getBlockByNumber)
  */
 function blockHeaderFromRpc (blockParams) {
   const blockHeader = new BlockHeader({
@@ -15,7 +15,7 @@ function blockHeaderFromRpc (blockParams) {
     coinbase: blockParams.miner,
     stateRoot: blockParams.stateRoot,
     transactionsTrie: blockParams.transactionsRoot,
-    receiptTrie: blockParams.receiptRoot || blockParams.receiptsRoot || ethUtil.SHA3_NULL,
+    receiptTrie: blockParams.receiptRoot || blockParams.receiptsRoot || hucUtil.SHA3_NULL,
     bloom: blockParams.logsBloom,
     difficulty: blockParams.difficulty,
     number: blockParams.number,
@@ -29,7 +29,7 @@ function blockHeaderFromRpc (blockParams) {
 
   // override hash incase something was missing
   blockHeader.hash = function () {
-    return ethUtil.toBuffer(blockParams.hash)
+    return hucUtil.toBuffer(blockParams.hash)
   }
 
   return blockHeader

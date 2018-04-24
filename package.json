@@ -1,5 +1,5 @@
 {
-  "name": "ethereumjs-block",
+  "name": "happyucjs-block",
   "version": "1.7.1",
   "description": "Provides Block serialization and help functions",
   "main": "index.js",
@@ -14,23 +14,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethereumjs/ethereumjs-block.git"
+    "url": "git+https://github.com/happyucjs/happyucjs-block.git"
   },
   "keywords": [
-    "ethereum",
+    "happyuc",
     "block"
   ],
   "author": "mjbecze (mb@ethdev.com)",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/ethereumjs/ethereumjs-block/issues"
+    "url": "https://github.com/happyucjs/happyucjs-block/issues"
   },
-  "homepage": "https://github.com/ethereumjs/ethereumjs-block#readme",
+  "homepage": "https://github.com/happyucjs/happyucjs-block#readme",
   "dependencies": {
     "async": "^2.0.1",
-    "ethereum-common": "0.2.0",
-    "ethereumjs-tx": "^1.2.2",
-    "ethereumjs-util": "^5.0.0",
+    "happyucjs-common": "/Users/dreamxyp/Transcend/happyuc-js/common/",
+    "happyucjs-tx": "/Users/dreamxyp/Transcend/happyuc-js/tx/",
+    "happyucjs-util": "/Users/dreamxyp/Transcend/happyuc-js/util/",
     "merkle-patricia-tree": "^2.1.2"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "browserify": "^15.0.0",
     "coveralls": "^2.11.6",
     "documentation": "4.0.0-beta16",
-    "ethereumjs-testing": "~1.0.0",
+    "happyucjs-testing": "/Users/dreamxyp/Transcend/happyuc-js/testing/",
     "istanbul": "^0.4.2",
     "karma": "^2.0.0",
     "karma-browserify": "^5.1.0",

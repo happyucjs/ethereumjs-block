@@ -2,10 +2,10 @@
 
 # blockFromRpc
 
-Creates a new block object from Ethereum JSON RPC.
+Creates a new block object from HappyUC JSON RPC.
 
 **Parameters**
 
--   `blockParams` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Ethereum JSON RPC of block (eth_getBlockByNumber)
--   `Optional` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** list of Ethereum JSON RPC of uncles (eth_getUncleByBlockHashAndIndex)
+-   `blockParams` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** HappyUC JSON RPC of block (huc_getBlockByNumber)
+-   `Optional` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** list of HappyUC JSON RPC of uncles (huc_getUncleByBlockHashAndIndex)
 -   `uncles`  
