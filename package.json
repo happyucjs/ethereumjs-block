@@ -28,9 +28,12 @@
   "homepage": "https://github.com/happyucjs/happyucjs-block#readme",
   "dependencies": {
     "async": "^2.0.1",
-    "happyucjs-common": "/Users/dreamxyp/Transcend/happyuc-js/common/",
-    "happyucjs-tx": "/Users/dreamxyp/Transcend/happyuc-js/tx/",
-    "happyucjs-util": "/Users/dreamxyp/Transcend/happyuc-js/util/",
+    // "happyucjs-common": "/Users/dreamxyp/Transcend/happyuc-js/common/",
+    // "happyucjs-tx": "/Users/dreamxyp/Transcend/happyuc-js/tx/",
+    // "happyucjs-util": "/Users/dreamxyp/Transcend/happyuc-js/util/",
+    "happyucjs-common": "https://github.com/happyucjs/happyucjs-common.git",
+    "happyucjs-tx": "https://github.com/happyucjs/happyucjs-tx.git",
+    "happyucjs-util": "https://github.com/happyucjs/happyucjs-util.git",
     "merkle-patricia-tree": "^2.1.2"
   },
   "devDependencies": {
@@ -39,7 +42,7 @@
     "browserify": "^15.0.0",
     "coveralls": "^2.11.6",
     "documentation": "4.0.0-beta16",
-    "happyucjs-testing": "/Users/dreamxyp/Transcend/happyuc-js/testing/",
+    // "happyucjs-testing": "/Users/dreamxyp/Transcend/happyuc-js/testing/",
     "istanbul": "^0.4.2",
     "karma": "^2.0.0",
     "karma-browserify": "^5.1.0",
