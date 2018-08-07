@@ -1,5 +1,5 @@
-// const testing = require('happyucjs-testing')
-const utils = require('happyucjs-util')
+// const testing = require('icjs-testing')
+const utils = require('icjs-util')
 const tape = require('tape')
 const Block = require('../')
 const BN = utils.BN
@@ -38,7 +38,7 @@ tape('[Header]: difficulty tests', t => {
   t.end()
 
   // Temporarily run local test selection
-  // also: implicit testing through happyucjs-vm tests
+  // also: implicit testing through icjs-vm tests
   // (no Byzantium difficulty tests available yet)
   /*
   let args = {}

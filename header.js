@@ -1,5 +1,5 @@
-const utils = require('happyucjs-util')
-const params = require('happyucjs-common/params.json')
+const utils = require('icjs-util')
+const params = require('icjs-common/params.json')
 const BN = utils.BN
   /**
    * An object that repersents the block header
@@ -49,32 +49,32 @@ var BlockHeader = module.exports = function (data) {
     default: utils.zeros(256)
   }, {
     name: 'difficulty',
-    default: new Buffer([])
+    default: Buffer.from([])
   }, {
     name: 'number',
     default: utils.intToBuffer(params.homeSteadForkNumber.v)
   }, {
     name: 'gasLimit',
-    default: new Buffer('ffffffffffffff', 'hex')
+    default: Buffer.from('ffffffffffffff', 'hex')
   }, {
     name: 'gasUsed',
     empty: true,
-    default: new Buffer([])
+    default: Buffer.from([])
   }, {
     name: 'timestamp',
-    default: new Buffer([])
+    default: Buffer.from([])
   }, {
     name: 'extraData',
     allowZero: true,
     empty: true,
-    default: new Buffer([])
+    default: Buffer.from([])
   }, {
     name: 'mixHash',
     default: utils.zeros(32)
       // length: 32
   }, {
     name: 'nonce',
-    default: new Buffer([]) // sha3(42)
+    default: Buffer.from([]) // sha3(42)
   }]
   utils.defineProperties(this, fields, data)
 }

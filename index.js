@@ -1,11 +1,11 @@
-const hucUtil = require('happyucjs-util')
-const Tx = require('happyucjs-tx')
+const ircUtil = require('icjs-util')
+const Tx = require('icjs-tx')
 const Trie = require('merkle-patricia-tree')
-const BN = hucUtil.BN
-const rlp = hucUtil.rlp
+const BN = ircUtil.BN
+const rlp = ircUtil.rlp
 const async = require('async')
 const BlockHeader = require('./header')
-const params = require('happyucjs-common/params.json')
+const params = require('icjs-common/params.json')
 
 /**
  * Creates a new block object
@@ -24,7 +24,7 @@ var Block = module.exports = function (data) {
   Object.defineProperty(this, 'raw', {
     get: function () {
       return this.serialize(false)
-    }
+    },
   })
 
   var rawTransactions, rawUncleHeaders
@@ -90,7 +90,7 @@ Block.prototype.setGenesisParams = function () {
   this.header.extraData = params.genesisExtraData.v
   this.header.nonce = params.genesisNonce.v
   this.header.stateRoot = params.genesisStateRoot.v
-  this.header.number = new Buffer([])
+  this.header.number = Buffer.from([])
 }
 
 /**
@@ -99,8 +99,9 @@ Block.prototype.setGenesisParams = function () {
  * @param {Boolean} rlpEncode whether to rlp encode the block or not
  */
 Block.prototype.serialize = function (rlpEncode) {
-  var raw = [this.header.raw, [],
-    []
+  var raw = [
+    this.header.raw, [],
+    [],
   ]
 
   // rlpEnode defaults to true
@@ -145,7 +146,7 @@ Block.prototype.validateTransactionsTrie = function () {
   if (this.transactions.length) {
     return txT === this.txTrie.root.toString('hex')
   } else {
-    return txT === hucUtil.SHA3_RLP.toString('hex')
+    return txT === ircUtil.SHA3_RLP.toString('hex')
   }
 }
 
@@ -188,7 +189,7 @@ Block.prototype.validate = function (blockChain, cb) {
     // validate block
     self.header.validate.bind(self.header, blockChain),
     // generate the transaction trie
-    self.genTxTrie.bind(self)
+    self.genTxTrie.bind(self),
   ], function (err) {
     if (err) {
       errors.push(err)
@@ -223,7 +224,7 @@ Block.prototype.validateUnclesHash = function () {
   })
 
   raw = rlp.encode(raw)
-  return hucUtil.sha3(raw).toString('hex') === this.header.uncleHash.toString('hex')
+  return ircUtil.sha3(raw).toString('hex') === this.header.uncleHash.toString('hex')
 }
 
 /**
@@ -265,7 +266,7 @@ Block.prototype.validateUncles = function (blockChain, cb) {
             cb3()
           }
         })
-      }
+      },
     ], cb2)
   }, cb)
 }
@@ -279,9 +280,9 @@ Block.prototype.validateUncles = function (blockChain, cb) {
 Block.prototype.toJSON = function (labeled) {
   if (labeled) {
     var obj = {
-      header: this.header.toJSON(true),
+      header      : this.header.toJSON(true),
       transactions: [],
-      uncleHeaders: []
+      uncleHeaders: [],
     }
 
     this.transactions.forEach(function (tx) {
@@ -293,7 +294,7 @@ Block.prototype.toJSON = function (labeled) {
     })
     return obj
   } else {
-    return hucUtil.baToJSON(this.raw)
+    return ircUtil.baToJSON(this.raw)
   }
 }
 

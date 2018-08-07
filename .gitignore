@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/osx,node
 
 ### OSX ###
@@ -75,4 +74,7 @@ package-lock.json
 
 # Yarn Integrity file
 .yarn-integrity
+yarn.lock
 
+# JetBrains IDE temporary
+.idea
