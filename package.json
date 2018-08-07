@@ -29,7 +29,7 @@
     "icjs-common": "^0.0.1",
     "icjs-tx": "git+https://github.com/icjs/icjs-tx.git",
     "icjs-util": "^0.0.1",
-    "merkle-patricia-tree": "^2.1.2"
+    "icjs-mpt": "^0.0.1"
   },
   "devDependencies": {
     "babelify": "^8.0.0",
