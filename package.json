@@ -27,7 +27,7 @@
   "dependencies": {
     "async": "^2.0.1",
     "icjs-common": "^0.0.1",
-    "icjs-tx": "git+https://github.com/icjs/icjs-tx.git",
+    "icjs-tx": "^0.0.2",
     "icjs-util": "^0.0.1",
     "icjs-mpt": "^0.0.1"
   },
@@ -38,7 +38,7 @@
     "coveralls": "^2.11.6",
     "documentation": "8.1.0",
     "istanbul": "^0.4.2",
-    "standard": "^8.4.0",
+    "standard": "^11.0.1",
     "tape": "^4.2.0"
   },
   "directories": {

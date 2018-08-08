@@ -105,7 +105,7 @@ Validates the uncles that are in the block if any. Returns a string to the callb
 
 ### Parameters
 
--   `blockChaina` **Blockchain** an instance of the Blockchain
+-   `blockChain` **Blockchain** an instance of the block chain
 -   `cb` **[Function][25]** the callback
 
 ## toJSON

@@ -1,7 +1,7 @@
 const utils = require('icjs-util')
 const params = require('icjs-common/params.json')
 const BN = utils.BN
-  /**
+/**
    * An object that repersents the block header
    * @constructor
    * @param {Array} data raw data, deserialized
@@ -71,7 +71,6 @@ var BlockHeader = module.exports = function (data) {
   }, {
     name: 'mixHash',
     default: utils.zeros(32)
-      // length: 32
   }, {
     name: 'nonce',
     default: Buffer.from([]) // sha3(42)
@@ -228,4 +227,3 @@ BlockHeader.prototype.hash = function () {
 BlockHeader.prototype.isGenesis = function () {
   return this.number.toString('hex') === ''
 }
-

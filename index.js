@@ -1,6 +1,6 @@
 const ircUtil = require('icjs-util')
 const Tx = require('icjs-tx')
-const Trie = require('merkle-patricia-tree')
+const Trie = require('icjs-mpt')
 const BN = ircUtil.BN
 const rlp = ircUtil.rlp
 const async = require('async')
@@ -24,7 +24,7 @@ var Block = module.exports = function (data) {
   Object.defineProperty(this, 'raw', {
     get: function () {
       return this.serialize(false)
-    },
+    }
   })
 
   var rawTransactions, rawUncleHeaders
@@ -101,7 +101,7 @@ Block.prototype.setGenesisParams = function () {
 Block.prototype.serialize = function (rlpEncode) {
   var raw = [
     this.header.raw, [],
-    [],
+    []
   ]
 
   // rlpEnode defaults to true
@@ -189,7 +189,7 @@ Block.prototype.validate = function (blockChain, cb) {
     // validate block
     self.header.validate.bind(self.header, blockChain),
     // generate the transaction trie
-    self.genTxTrie.bind(self),
+    self.genTxTrie.bind(self)
   ], function (err) {
     if (err) {
       errors.push(err)
@@ -230,7 +230,7 @@ Block.prototype.validateUnclesHash = function () {
 /**
  * Validates the uncles that are in the block if any. Returns a string to the callback if uncles are invalid
  * @method validateUncles
- * @param {Blockchain} blockChaina an instance of the Blockchain
+ * @param {Blockchain} blockChain an instance of the block chain
  * @param {Function} cb the callback
  */
 Block.prototype.validateUncles = function (blockChain, cb) {
@@ -266,7 +266,7 @@ Block.prototype.validateUncles = function (blockChain, cb) {
             cb3()
           }
         })
-      },
+      }
     ], cb2)
   }, cb)
 }
@@ -280,9 +280,9 @@ Block.prototype.validateUncles = function (blockChain, cb) {
 Block.prototype.toJSON = function (labeled) {
   if (labeled) {
     var obj = {
-      header      : this.header.toJSON(true),
+      header: this.header.toJSON(true),
       transactions: [],
-      uncleHeaders: [],
+      uncleHeaders: []
     }
 
     this.transactions.forEach(function (tx) {
